@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Arena from '../arena/arena';
+import Nav from '../nav/nav';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -10,6 +11,8 @@ class App extends Component {
     return (
         <Router>
           <div className="App">
+
+              <Nav/>
               <Route path="/" exact={true} render={() => (
                   <div className="App-header">
                       <img src={logo} className="App-logo" alt="logo" />
