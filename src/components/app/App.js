@@ -6,6 +6,7 @@ import Arena from '../arena/arena';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MuiThemeprovider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
+import Home from "../home/home";
 
 class App extends Component {
   render() {
@@ -21,11 +22,7 @@ class App extends Component {
                       </div>
                   )}/>
                 <Route path="/arena" component={Arena}/>
-                <Route path="/home" render={() => (
-                    <div>
-                        Welcome to Sort Visualizer
-                    </div>
-                )}/>
+                <Route path="/" exact={true} component={Home}/>
               </div>
             </MuiThemeprovider>
         </Router>
