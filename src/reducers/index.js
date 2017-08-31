@@ -1,7 +1,14 @@
 import * as actions from '../actions';
 
-const initialState = {
+export const STYLE = {
+    CARD:'card',
+    NUMBER:'number',
+    LETTER:'letter'
+}
 
+const initialState = {
+    array:[],
+    style:STYLE.CARD
 };
 
 export const reducer = (state=initialState, action) => {
