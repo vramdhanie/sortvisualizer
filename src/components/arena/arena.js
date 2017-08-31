@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './arena.css';
+import Array from '../array/array';
 
 export default class Arena extends Component {
     constructor(props){
@@ -9,6 +11,9 @@ export default class Arena extends Component {
         return (
             <div className="arena">
                 This is the Arena
+
+                <Array/>
+
             </div>
         )
     }
