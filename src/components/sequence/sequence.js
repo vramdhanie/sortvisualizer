@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './array.css';
+import './sequence.css';
 
 export default class Sequence extends Component {
     render(){

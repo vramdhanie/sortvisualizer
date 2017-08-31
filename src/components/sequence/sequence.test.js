@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import array from './array';
+import Sequence from './sequence';
 
-describe('Array', () => {
+describe('Sequence', () => {
     it('should render', () => {
-        shallow(<Array/>);
+        shallow(<Sequence/>);
     });
 });
