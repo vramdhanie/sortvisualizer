@@ -12,7 +12,7 @@ export default class Arena extends Component {
             <div className="arena">
                 This is the Arena
 
-                <Sequence/>
+                <Sequence />
 
             </div>
         )
