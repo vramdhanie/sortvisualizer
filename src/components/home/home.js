@@ -4,9 +4,17 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/navigation/chevron-right';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import Paper from 'material-ui/Paper';
+import { Route } from 'react-router';
 
 export default class Home extends Component {
     render(){
+        const startBtn = () => (
+            <Route render={({ history }) => (
+                <FloatingActionButton onClick={() => { history.push('/arena') }}>
+                    <ContentAdd/>
+                </FloatingActionButton>
+            )}/>
+        )
         return (
             <div className="home">
                 <section className="home__intro">
@@ -26,9 +34,7 @@ export default class Home extends Component {
 
                 </section>
                 <section className="home__start">
-                    <FloatingActionButton>
-                        <ContentAdd/>
-                    </FloatingActionButton>
+                    { startBtn() }
                 </section>
             </div>
         );
