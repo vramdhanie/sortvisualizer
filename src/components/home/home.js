@@ -5,9 +5,22 @@ import ContentAdd from 'material-ui/svg-icons/navigation/chevron-right';
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import Paper from 'material-ui/Paper';
 import { Route } from 'react-router';
+import { setStyle } from '../../actions/index';
+import { connect } from 'react-redux';
+import {  bindActionCreators } from 'redux';
+import { STYLE } from '../../reducers/index';
 
-export default class Home extends Component {
+export class Home extends Component {
+
+    constructor(props){
+        super(props);
+    }
+
+
+
     render(){
+        const { dispatch } = this.props;
+        const action = bindActionCreators(setStyle, dispatch);
         const startBtn = () => (
             <Route render={({ history }) => (
                 <FloatingActionButton onClick={() => { history.push('/arena') }}>
@@ -26,8 +39,8 @@ export default class Home extends Component {
                         <h1>Options</h1>
                         <p>Choose from these options</p>
                         <RadioButtonGroup name="options">
-                            <RadioButton value="letters" label="Letters"/>
-                            <RadioButton value="numbers" label="Numbers"/>
+                            <RadioButton value="letters" label="Letters" onClick={()=>action(STYLE.LETTER)}/>
+                            <RadioButton value="numbers" label="Numbers" onClick={()=>action(STYLE.NUMBER)}/>
                             <RadioButton value="cards" label="Cards"/>
                         </RadioButtonGroup>
                     </Paper>
@@ -40,3 +53,9 @@ export default class Home extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => ({
+    ...state
+});
+
+export default connect(mapStateToProps)(Home);

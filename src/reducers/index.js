@@ -1,4 +1,5 @@
 import * as actions from '../actions';
+import {SET_STYLE} from "../actions/index";
 
 export const STYLE = {
     CARD:'card',
@@ -8,7 +9,8 @@ export const STYLE = {
 
 const initialState = {
     array:[],
-    style:STYLE.CARD,
+    style:STYLE.NUMBER,
+    numberCards:12,
     registers:[{
             address: 0,
             content: null
@@ -29,6 +31,11 @@ const initialState = {
 
 export const reducer = (state=initialState, action) => {
     switch(action.type){
+        case SET_STYLE:
+            return {
+                ...state,
+                style: action.style
+            }
         default:
             return state;
     }
