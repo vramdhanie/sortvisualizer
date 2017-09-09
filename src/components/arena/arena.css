@@ -1,0 +1,10 @@
+.arena {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90%;
+}
+.arena .registers {
+    display: flex;
+    justify-content: space-around;
+}

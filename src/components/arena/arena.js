@@ -12,15 +12,16 @@ export class Arena extends Component {
 
     render(){
 
-        const registers = this.props.registers.map(register => {
-            return <Register/>
+        const registers = this.props.registers.map((register, index) => {
+            return <Register key={index}/>
         } );
 
         return (
             <div className="arena">
                 This is the Arena
-
-                { registers }
+                <div className="registers">
+                    { registers }
+                </div>
 
                 <Sequence />
 
