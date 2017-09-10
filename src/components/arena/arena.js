@@ -24,7 +24,6 @@ export class Arena extends Component {
 
         return (
             <div className="arena">
-                This is the Arena
                 <div className="registers">
                     { registers }
                 </div>
