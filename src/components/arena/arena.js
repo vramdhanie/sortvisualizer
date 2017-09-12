@@ -4,11 +4,16 @@ import Sequence from '../sequence/sequence';
 import Register from '../register/register';
 import { connect } from 'react-redux';
 import Card from '../card/card';
+import { shuffleKeys } from '../../actions/index';
 
 export class Arena extends Component {
 
     constructor(props){
         super(props);
+    }
+
+    componentWillMount(){
+        this.props.dispatch(shuffleKeys());
     }
 
     render(){
@@ -17,10 +22,7 @@ export class Arena extends Component {
             return <Register key={index}/>
         } );
 
-        const cards = [];
-        for(let i = 0; i < this.props.numberCards; i++){
-            cards.push(<Card key={i} value={i + 1} type={this.props.style}/>);
-        }
+        const cards = this.props.keys.map(key => <Card key={key} value={key + 1} type={this.props.style}/>)
 
         return (
             <div className="arena">
